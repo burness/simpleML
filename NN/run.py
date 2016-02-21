@@ -14,39 +14,16 @@ def read_data(filename):
         Read data from file.
         Will also return header if header=True
     """
-    data, header = [], None
-    # with open(filename, 'rt') as csvfile:
-    #     spamreader = csv.reader(csvfile, delimiter=',')
-    #     if has_header:
-    #         header = spamreader.next()
-    #     for row in spamreader:
-    #         data.append(row)
-    # return (np.array(data), np.array(header))
     data = pd.read_csv(filename).as_matrix()
     return data
 
 
-def save_data(filename, X, header):
+def save_data(filename, X):
     """
         Save data to file.
     """
-    with open(filename, 'wt') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',')
-        spamwriter.writerow(header)
-        spamwriter.writerows(X)
+    X.to_csv(filename)
 
-def convert_y(y, class_vec):
-    """
-        Binarise class vectors.
-        Converts class into a binary class vector.
-    """
-    class_idx = { key: i for i,key in enumerate(class_vec)}
-    n, K = len(y), len(class_vec)
-    Y = np.zeros((n, K))
-    for i in range(0, n):
-        #print class_idx[y[i]]
-        Y[i, class_idx[y[i]]] = 1
-    return Y.astype(int)
 
 def compute_acc(Y_hat, Y):
     """
