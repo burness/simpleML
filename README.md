@@ -14,4 +14,3 @@ is a toy code, I just transform it to be a python version from the origin code I
 
 I will do more in simpleML, especially the algorithms in Industry.
 
-
