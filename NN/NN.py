@@ -248,8 +248,8 @@ class NeuralNetwork():
                 error_vals.append(self.E(y, y_hat))
 
                 W = self.backpropagate(W, o, y, self.learning_rate, self.alpha)
-                W_faster = self.backpropagate_faster(W, o, y, self.learning_rate, self.alpha)
-                print(W,W_faster)
+                # W_faster = self.backpropagate_faster(W, o, y, self.learning_rate, self.alpha)
+                # print(W,W_faster)
 
             MSE = np.mean(np.array(error_vals))
             MSEs.append(MSE)

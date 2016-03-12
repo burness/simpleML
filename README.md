@@ -6,6 +6,8 @@ I get the code from the web and modify some.
 Then, I will use NN to do some work in NLP.
 TODO: modify the backproparation to be a faster one by use matrix computation instead of loop
 
+### Word2vec
+This is a simple Word2vec which is based on the CS22d Pset1.
 
 
 
