@@ -72,7 +72,6 @@ class w2v():
         grad = np.zeros(output_vec.shape)
         for i in xrange(K):
             grad[sample_indexs[i]] += predicted*(1-w_r_k)[i]
-
         return cost, grad_pred, grad
 
     def skip_gram(self, current_word, C, context_words, tokens, input_vecs, output_vecs, word2vec_cost_grad = softmax_cost_grad):
